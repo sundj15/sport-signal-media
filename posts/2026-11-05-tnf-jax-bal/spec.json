@@ -1,0 +1,12 @@
+{"slides":[
+{"type":"matchup","tag":"THURSDAY NIGHT · 7:15 PM CT","title":"Who you got?","bg_text":"JAX","c1":"#006778","c2":"#241773",
+ "question":"Comment your winner + final score 👇",
+ "games":[{"time":"TNF","away":{"abbr":"JAX","name":"Jaguars","c1":"#006778","c2":"#D7A22A","pct":"81.9%"},"home":{"abbr":"BAL","name":"Ravens","c1":"#241773","c2":"#9E7C0C","pct":"18.1%"}}]},
+{"type":"list","tag":"FORM GUIDE","title":"Heading in.","c1":"#241773","c2":"#006778","rows":[
+ {"team":{"abbr":"JAX","c1":"#006778","c2":"#D7A22A"},"main":"Jaguars 42, Colts 7","sub":"Last week","kicker":"W"},
+ {"team":{"abbr":"BAL","c1":"#241773","c2":"#9E7C0C"},"main":"Bills 36, Ravens 10","sub":"Last week","kicker":"L"},
+ {"team":{"abbr":"BAL","c1":"#241773","c2":"#9E7C0C"},"main":"Bengals 35, Ravens 13","sub":"Two weeks ago","kicker":"L"},
+ {"team":{"abbr":"BAL","c1":"#241773","c2":"#9E7C0C"},"main":"Browns 13, Ravens 10","sub":"Three weeks ago","kicker":"L"}],
+ "note":"Ravens have lost three straight."},
+{"type":"question","lines":["Upset or","blowout?"],"title_size":140,"options":["Jaguars roll","Jaguars, close game","Ravens snap the skid"]}
+]}
