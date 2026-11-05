@@ -23,3 +23,6 @@ The manager is the scheduled run in the owner's Claude conversation. It owns the
 ## Limits
 - Replying to comments and DMs can't be automated through Metricool on this plan — remind the owner weekly that replies in the first hour drive reach.
 - If anything fails, don't loop: one message to the owner with what failed and the files.
+
+## Newswire watch (every 2 hours, 9 AM–9 PM CT)
+A separate send_later chain ("Sport Signal: News watch") runs the Scout in quick breaking-news mode and follows `agents/NEWSWIRE.md`. Each watch run first schedules the next watch (2 hours later; after 9 PM, the next day at 9 AM), then searches, and only posts when every NEWSWIRE rule passes. Quiet runs send nothing.
