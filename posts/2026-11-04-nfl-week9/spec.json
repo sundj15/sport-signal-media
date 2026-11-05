@@ -1,0 +1,11 @@
+{"slides":[
+{"type":"final","teams":[{"abbr":"ARI","name":"CARDINALS","score":33,"c1":"#97233F","c2":"#FFB612"},{"abbr":"DAL","name":"COWBOYS","score":30,"c1":"#041E42","c2":"#869397"}],
+ "label":["Week 9","Upset alert"],"headline":"Cards steal Dallas","stat":{"big":"28.1%","a":"pregame chance","b":"Week 9's biggest upset"},"question":"Who saw this one coming?"},
+{"type":"list","tag":"WEEK 9","title":"The rest of the week.","c1":"#1a2f66","c2":"#6b1a2c","swipe":false,"rows":[
+ {"team":{"abbr":"JAX","c1":"#006778","c2":"#D7A22A"},"main":"Jaguars 42, Colts 7","sub":"Biggest blowout of the week","kicker":"+35"},
+ {"team":{"abbr":"BUF","c1":"#00338D","c2":"#C60C30"},"main":"Bills 36, Ravens 10","sub":"Buffalo rolls at home","kicker":"+26"},
+ {"team":{"abbr":"WAS","c1":"#5A1414","c2":"#FFB612"},"main":"Commanders 27, Eagles 10","sub":"Sunday Night Football","kicker":"SNF"},
+ {"team":{"abbr":"CHI","c1":"#0B162A","c2":"#C83803"},"main":"Bears 34, Seahawks 17","sub":"Monday Night Football in Seattle","kicker":"MNF"},
+ {"team":{"abbr":"DEN","c1":"#FB4F14","c2":"#002244"},"main":"Broncos 28, Chiefs 24","sub":"Denver takes the division clash","kicker":"+4"}]},
+{"type":"question","lines":["Most","impressive","win?"],"options":["Cardinals at Dallas","Jaguars 42-7","Bears on MNF","Commanders on SNF"]}
+]}
