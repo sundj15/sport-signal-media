@@ -48,3 +48,6 @@ First comment: an emoji vote, e.g. `🔵 = Giants, 🔴 = Texans`.
      To find new tracks, pass a search term as audioId; Metricool returns candidate ids. If audio is rejected with 403, post the Reel without audio and tell the owner the Instagram/Facebook link needs checking.
    - Carousel: media = slides in order, instagramData `{"type":"POST"}`.
 5. Check `getScheduledPosts` first so nothing is scheduled twice.
+
+## Agents
+Posting is run by three agents — see `agents/`: **Scout** (what sports pages are posting, writes `research/` briefs), **Creator** (builds the post), **Manager** (schedule, review, budget, on-time checks, weekly review). The Manager is the scheduled run and follows `agents/MANAGER.md`.
