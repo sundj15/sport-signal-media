@@ -42,6 +42,9 @@ First comment: an emoji vote, e.g. `🔵 = Giants, 🔴 = Texans`.
 2. Reel days: `tools/reel.sh out/reel.mp4 out/slide1.png out/slide2.png ...`
 3. Save to `posts/YYYY-MM-DD-slug/` (slides, reel.mp4, spec.json), commit, push.
 4. Schedule in Metricool with media `https://raw.githubusercontent.com/sundj15/sport-signal-media/main/posts/<folder>/<file>`.
-   - Reel: media = [reel.mp4], instagramData `{"type":"REEL","showReelOnFeed":true}`, `videoCoverMilliseconds: 500`.
+   - Reel: media = [reel.mp4], instagramData `{"type":"REEL","showReelOnFeed":true,"audioConfiguration":{"audioId":"<id>","audioVolume":100,"videoVolume":0}}`, `videoCoverMilliseconds: 500`.
+     Every Reel gets an Instagram-catalog song. Rotate through these (verified ids), never the same one twice in a row:
+     `1477454630815990` Born For This (Auralux) · `470234301018709` Unstoppable (Instrumental) (Mike Floss) · `1177466663826304` Legends (stereogully) · `303178789177383` Burn It Down (Instrumental) (Jonny Houlihan) · `2245316862885720` Awards Night (Danny Peter Wolf).
+     To find new tracks, pass a search term as audioId; Metricool returns candidate ids. If audio is rejected with 403, post the Reel without audio and tell the owner the Instagram/Facebook link needs checking.
    - Carousel: media = slides in order, instagramData `{"type":"POST"}`.
 5. Check `getScheduledPosts` first so nothing is scheduled twice.
