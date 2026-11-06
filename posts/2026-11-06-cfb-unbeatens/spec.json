@@ -1,0 +1,19 @@
+{"slides":[
+{"type":"cover","tag":"COLLEGE FOOTBALL","c1":"#F47321","c2":"#2D68C4","bg_text":"8-0",
+ "lines":["Only 3","unbeatens","left."],"accent_line":0,
+ "sub":"Miami · Utah · UCLA — all 8-0",
+ "question":"All 3 play Saturday"},
+{"type":"list","tag":"STILL PERFECT","title":"The last 3.","c1":"#CC0000","c2":"#005030","rows":[
+ {"team":{"abbr":"MIA","c1":"#F47321","c2":"#005030"},"main":"Miami Hurricanes","sub":"Last: won 38-35 at North Carolina","kicker":"8-0"},
+ {"team":{"abbr":"UTAH","c1":"#CC0000","c2":"#1A1A1A"},"main":"Utah Utes","sub":"Last: won 49-25 at Cincinnati","kicker":"8-0"},
+ {"team":{"abbr":"UCLA","c1":"#2D68C4","c2":"#F2A900"},"main":"UCLA Bruins","sub":"Last: beat Nevada 27-0","kicker":"8-0"}],
+ "note":"Every other FBS team has at least one loss."},
+{"type":"matchup","tag":"SATURDAY · ALL 3 PLAY","title":"Who survives?","c1":"#002E5D","c2":"#CC0000",
+ "question":"Which one falls first? 👇",
+ "games":[
+  {"time":"11 AM CT","away":{"abbr":"BYU","name":"BYU 7-1","c1":"#002E5D","c2":"#FFFFFF"},"home":{"abbr":"UTAH","name":"Utah 8-0","c1":"#CC0000","c2":"#1A1A1A"}},
+  {"time":"11 AM CT","away":{"abbr":"UCLA","name":"UCLA 8-0","c1":"#2D68C4","c2":"#F2A900"},"home":{"abbr":"MINN","name":"Minn. 5-3","c1":"#7A0019","c2":"#FFCC33"}},
+  {"time":"6:30 PM CT","away":{"abbr":"MIA","name":"Miami 8-0","c1":"#F47321","c2":"#005030"},"home":{"abbr":"ND","name":"N. Dame 7-1","c1":"#0C2340","c2":"#C99700"}}]},
+{"type":"question","lines":["Next one","to fall?"],"title_size":130,"opts_top":660,"c1":"#F47321","c2":"#2D68C4",
+ "options":["Miami at Notre Dame","Utah vs BYU","UCLA at Minnesota","None. All 3 survive"]}
+]}

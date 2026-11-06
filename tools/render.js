@@ -61,6 +61,7 @@ body{width:1080px;height:1350px;background:var(--ink);color:#fff;font-family:"De
 .mu .pc{font:700 22px/1 "DejaVu Sans";color:#aeb6c1;margin-top:8px;letter-spacing:2px}
 .mu .vs{text-align:center}.mu .vs b{display:block;font:italic 700 64px/1 "DejaVu Sans Condensed";color:var(--lime)}.mu .vs span{font:700 20px/1 "DejaVu Sans";letter-spacing:3px;color:#d8dde5}
 .mu .chip{margin:0 auto;width:120px;height:92px;font-size:46px}
+.chip.long{font-size:44px;letter-spacing:-3px}.mu .chip.long{font-size:36px;letter-spacing:-2px}
 .opt{display:flex;align-items:center;gap:22px;padding:20px 28px;margin-bottom:14px;border:2px solid #ffffff35;background:#00000055;transform:skewX(-6deg);font:700 50px/1 "DejaVu Sans Condensed";text-transform:uppercase}
 .opt>*{transform:skewX(6deg)}.opt b{width:60px;height:60px;display:grid;place-items:center;background:var(--lime);color:#05070c;font-size:36px;flex:none}
 `;
@@ -76,8 +77,8 @@ ${inner}
 <div class="nav"><ul><li>NFL</li><li>NBA</li><li>MLB</li><li>NHL</li><li>CFB</li><li>MORE</li></ul><p>FOLLOW<br>THE <b>SIGNAL.</b></p></div>
 <script>document.querySelectorAll('[data-fit]').forEach(e=>{let f=parseFloat(getComputedStyle(e).fontSize);const w=e.parentElement?e.clientWidth:1000;while(e.scrollWidth>e.clientWidth+2&&f>20){f-=2;e.style.fontSize=f+'px'}});</script>
 </body></html>`;
-const chip = t => `<div class="chip" style="background:${t.c1};box-shadow:inset 0 -10px 0 ${t.c2}">${esc(t.abbr)}</div>`;
-const tag = t => `<div class="tag" style="background:${t.c1};box-shadow:inset 0 -8px 0 ${t.c2}">${esc(t.abbr)}</div>`;
+const chip = t => `<div class="chip${String(t.abbr).length >= 4 ? ' long' : ''}" style="background:${t.c1};box-shadow:inset 0 -10px 0 ${t.c2}">${esc(t.abbr)}</div>`;
+const tag = t => `<div class="tag" style="${String(t.abbr).length >= 4 ? 'font-size:25px;letter-spacing:-1px;' : ''}background:${t.c1};box-shadow:inset 0 -8px 0 ${t.c2}">${esc(t.abbr)}</div>`;
 
 const T = {
   final: s => chrome({ ...s, c1: s.teams[0].c1, c2: s.teams[1].c1, bg_text: s.teams[0].abbr }, `
