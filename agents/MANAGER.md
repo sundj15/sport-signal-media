@@ -18,7 +18,12 @@ The manager is the scheduled run in the owner's Claude conversation. It owns the
 ## Sunday 6 PM run
 - Spawn the Scout for a **weekly look-ahead** (biggest games and storylines Mon–Fri) → `research/week-YYYY-MM-DD.md`.
 - Performance review: pull last 7 days of Instagram metrics — posts (IGPO*) and Reels (IGRE02,06,23 views,11 reach,24 avg watch time,27 retention,28 3-sec view rate,21 shares,12 saves,07 comments) + follower change (IGEV01/43/44). Note which topic/format/song/time did best and worst, append a short entry to `research/performance.md`, and adjust next week's plan (topics/formats only; keep 4 posts/week).
-- SendUserMessage: followers, best post, worst post, what changes this week, and one thing the owner can do (e.g. reply to comments on X post).
+- **Weekly experiment loop** (the owner wants continuous improvement):
+  1. Read `research/experiments.md`. Score last week's experiment against its success metric (avg watch time, retention %, reach, shares, follows). Mark it WIN / LOSS / UNCLEAR (fewer than 2 data points or reach < 30 = UNCLEAR, run again).
+  2. WIN → write it into PLAYBOOK.md as a rule (and the Creator/Scout files if relevant). LOSS → revert. Never change a rule without data.
+  3. Pick ONE new variable to test next week and write it in `experiments.md` with: hypothesis, what changes (e.g. hook style, Reel length, post time, topic/league, format, song style, caption length, Trial Reel vs Reel), which posts it applies to, success metric and target. Change only one thing at a time so the result is readable.
+  4. Keep a running "What we know works" list at the top of `experiments.md`.
+- SendUserMessage: followers (and change), best and worst post with the reason, last experiment result, this week's experiment, rule changes made, and one thing the owner can do (e.g. reply to comments on X post).
 
 ## Limits
 - Replying to comments and DMs can't be automated through Metricool on this plan — remind the owner weekly that replies in the first hour drive reach.
