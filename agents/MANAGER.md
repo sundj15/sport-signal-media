@@ -17,7 +17,7 @@ The manager is the scheduled run in the owner's Claude conversation. It owns the
 
 ## Sunday 6 PM run
 - Spawn the Scout for a **weekly look-ahead** (biggest games and storylines Mon–Fri) → `research/week-YYYY-MM-DD.md`.
-- Performance review: pull last 7 days of Instagram metrics (views, reach, likes, comments, shares, saves, follows per post + follower change). Note which topic/format/song/time did best and worst, append a short entry to `research/performance.md`, and adjust next week's plan (topics/formats only; keep 4 posts/week).
+- Performance review: pull last 7 days of Instagram metrics — posts (IGPO*) and Reels (IGRE02,06,23 views,11 reach,24 avg watch time,27 retention,28 3-sec view rate,21 shares,12 saves,07 comments) + follower change (IGEV01/43/44). Note which topic/format/song/time did best and worst, append a short entry to `research/performance.md`, and adjust next week's plan (topics/formats only; keep 4 posts/week).
 - SendUserMessage: followers, best post, worst post, what changes this week, and one thing the owner can do (e.g. reply to comments on X post).
 
 ## Limits

@@ -39,10 +39,10 @@ First comment: an emoji vote, e.g. `🔵 = Giants, 🔴 = Texans`.
 
 ## Publishing steps
 1. Render: `NODE_PATH=$(npm root -g) node tools/render.js spec.json out`
-2. Reel days: `tools/reel.sh out/reel.mp4 out/slide1.png out/slide2.png ...`
+2. Reel days: build an **animated** Reel with `NODE_PATH=$(npm root -g) node tools/reel2.js reel_spec.json reel.mp4` (see Reel rules below). `tools/reel.sh` (slideshow) is retired for Reels.
 3. Save to `posts/YYYY-MM-DD-slug/` (slides, reel.mp4, spec.json), commit, push.
 4. Schedule in Metricool with media `https://raw.githubusercontent.com/sundj15/sport-signal-media/main/posts/<folder>/<file>`.
-   - Reel: media = [reel.mp4], instagramData `{"type":"REEL","showReelOnFeed":true,"audioConfiguration":{"audioId":"<id>","audioVolume":100,"videoVolume":0}}`, `videoCoverMilliseconds: 500`.
+   - Reel: media = [reel.mp4], instagramData `{"type":"REEL","showReelOnFeed":true,"audioConfiguration":{"audioId":"<id>","audioVolume":100,"videoVolume":0}}`, `videoCoverMilliseconds: 1200`.
      Every Reel gets an Instagram-catalog song. Rotate through these (verified ids), never the same one twice in a row:
      `1477454630815990` Born For This (Auralux) · `470234301018709` Unstoppable (Instrumental) (Mike Floss) · `1177466663826304` Legends (stereogully) · `303178789177383` Burn It Down (Instrumental) (Jonny Houlihan) · `2245316862885720` Awards Night (Danny Peter Wolf).
      To find new tracks, pass a search term as audioId; Metricool returns candidate ids. If audio is rejected with 403, post the Reel without audio and tell the owner the Instagram/Facebook link needs checking.
@@ -51,3 +51,14 @@ First comment: an emoji vote, e.g. `🔵 = Giants, 🔴 = Texans`.
 
 ## Agents
 Posting is run by three agents — see `agents/`: **Scout** (what sports pages are posting, writes `research/` briefs), **Creator** (builds the post), **Manager** (schedule, review, budget, on-time checks, weekly review). The Manager is the scheduled run and follows `agents/MANAGER.md`.
+
+## Reel rules (since Nov 7 — first Reels had ~2s average watch time on 10–16s videos)
+Data: Reels reached 40–76 people each (photos reached 2), so Reels stay the main format, but viewers left in under 2 seconds. Sports pages that win on Reels (House of Highlights, Bleacher Report, StatMuse-style accounts) open with one shocking line and keep it moving.
+- Native 9:16 with `tools/reel2.js` — never letterboxed 4:5 slides.
+- **Frame 1 = the hook**, already on screen: ≤ 8 words, contains a number or a surprise ("DALLAS HAD A 71.9% CHANCE."). Lines ≤ 14 characters so they stay huge.
+- **7–10 seconds total**, 3–5 scenes, a new beat every ~1.5–2s: hook → payoff stat (count-up) → context (list/versus) → question. The question scene should make people want to rewatch/answer.
+- One idea per Reel. Lead with the biggest audience: NFL > NBA > college football > others; star players and big-market teams in the hook (names only, no photos).
+- Formats to rotate: **stat shock**, **who's better / versus**, **ranking (top 3)**, **pick'em**, **upset alert**.
+- Caption short: hook line, 2–4 lines, CAPS question, sign-off, 5 hashtags.
+- Song: from the rotation; if Metricool shows a trending sports track in search results, prefer it.
+- The Manager's Sunday review tracks per Reel: views, reach, **average watch time** (target > 4s), **retention %** (target > 40%), shares, follows — and keeps what works.

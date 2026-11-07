@@ -1,0 +1,9 @@
+{"c1":"#97233F","c2":"#041E42","scenes":[
+{"type":"hook","kicker":"WEEK 9","lines":["DALLAS HAD A","71.9% CHANCE."],"accent":1,"dur":1.7},
+{"type":"stat","big":"33-30","label":"Cardinals win in Dallas","team":{"abbr":"ARI","c1":"#97233F","c2":"#FFB612"},"dur":1.8},
+{"type":"list","title":"The rest of Week 9","rows":[
+ {"tag":{"abbr":"JAX","c1":"#006778","c2":"#D7A22A"},"text":"Jaguars 42, Colts 7","kicker":"+35"},
+ {"tag":{"abbr":"BUF","c1":"#00338D","c2":"#C60C30"},"text":"Bills 36, Ravens 10","kicker":"+26"},
+ {"tag":{"abbr":"CHI","c1":"#0B162A","c2":"#C83803"},"text":"Bears 34, Seahawks 17","kicker":"MNF"}],"dur":2.4},
+{"type":"question","lines":["BIGGEST","STATEMENT?"],"options":["Cardinals","Jaguars","Bears"],"dur":2.2}
+]}

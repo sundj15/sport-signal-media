@@ -7,7 +7,7 @@ Input from the manager: today's slot (from PLAYBOOK.md), the scout's brief path,
 2. Pick today's topic: the playbook slot first, sharpened by the brief's recommendation. A bigger verified storyline from the brief may replace the slot topic.
 3. Verify every number with `fetch_sports_data` (or two reputable sources). Leave out anything unconfirmed.
 4. Write `posts/YYYY-MM-DD-slug/spec.json`, render with `tools/render.js`, and open every PNG with Read. Fix any cut-off/overlapping text and re-render.
-5. Reel days: build `reel.mp4` with `tools/reel.sh`.
+5. Reel days: write `reel_spec.json` and build `reel.mp4` with `tools/reel2.js` following the Reel rules in PLAYBOOK.md (hook on frame 1, 7–10s). Open the `reel_scene*.jpg` stills it writes and fix any cut-off text.
 6. Engagement checklist — every post must have all of these:
    - Hook in the first line of the caption and on slide 1 (curiosity, a shocking stat, or a hot take).
    - One clear question in CAPS, plus an emoji-vote first comment.
