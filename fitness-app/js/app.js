@@ -480,9 +480,9 @@
   }
 
   function dataCard() {
-    return '<section class="card"><h3>Your data</h3><p><small>Everything is stored only in this browser. Export a backup to move it to another device.</small></p>' +
-      '<div class="row"><button class="btn btn-ghost btn-small" data-action="export">Export backup</button>' +
-      '<label class="btn btn-ghost btn-small" style="margin:0;color:var(--accent)">Import backup<input type="file" accept="application/json" data-action="import" hidden></label>' +
+    return '<section class="card"><h3>Your data</h3><p><small>Everything is stored only in this browser. Back it up to keep it safe or move it to another device.</small></p>' +
+      '<div class="row"><button class="btn btn-ghost btn-small" data-action="export">Back up my data</button>' +
+      '<button class="btn btn-ghost btn-small" data-action="restore">Restore backup</button>' +
       '<div class="spacer"></div><button class="btn btn-danger btn-small" data-action="reset">Erase all</button></div></section>';
   }
 
@@ -678,33 +678,51 @@
         save(); render(); break;
       case 'preview': ui.preview = el.dataset.key; render(); window.scrollTo(0, 0); break;
       case 'start':
-        if (state.active && !confirm('Discard the workout in progress and start this one?')) return;
-        startWorkout(el.dataset.key); break;
+        var key = el.dataset.key;
+        if (state.active) return ask('You have a workout in progress. Discard it and start this one?', 'Discard and start', function () { startWorkout(key); });
+        startWorkout(key); break;
       case 'finish':
-        if (!state.active.sets.some(function (s) { return s.done; }) && !confirm('No sets are ticked as done. Save anyway?')) return;
+        if (!state.active.sets.some(function (s) { return s.done; })) return ask('No sets are ticked as done. Save the workout anyway?', 'Save workout', finishWorkout);
         finishWorkout(); break;
       case 'discard':
-        if (confirm('Discard this workout? Nothing will be saved.')) { state.active = null; save(); stopRest(); render(); }
+        ask('Discard this workout? Nothing will be saved.', 'Discard', function () { state.active = null; save(); stopRest(); render(); });
         break;
       case 'rest-skip': stopRest(); break;
       case 'restart-program':
-        if (confirm('Clear all program check-marks and start again from week 1? Your workout history is kept.')) {
+        ask('Clear all program check-marks and start again from week 1? Your workout history is kept.', 'Restart program', function () {
           state.completed = {}; ui.preview = null; save(); render();
-        }
+        });
         break;
       case 'del-workout':
-        if (!confirm('Delete this workout from your history?')) return;
-        state.workouts = state.workouts.filter(function (w) { return w.id !== el.dataset.id; });
-        Object.keys(state.completed).forEach(function (k) { if (state.completed[k] === el.dataset.id) delete state.completed[k]; });
-        save(); render(); break;
+        var wid = el.dataset.id;
+        ask('Delete this workout from your history?', 'Delete', function () {
+          state.workouts = state.workouts.filter(function (w) { return w.id !== wid; });
+          Object.keys(state.completed).forEach(function (k) { if (state.completed[k] === wid) delete state.completed[k]; });
+          save(); render();
+        });
+        break;
       case 'export': exportData(); break;
+      case 'download-backup': downloadBackup(); break;
+      case 'copy-backup': copyBackup(); break;
+      case 'restore': openRestore(); break;
+      case 'restore-go': restoreFromText($('#restore-text').value); break;
       case 'reset':
-        if (confirm('Erase ALL data (profile, food log, workouts)? This cannot be undone.')) {
+        ask('Erase ALL data (profile, food log, workouts)? This cannot be undone.', 'Erase everything', function () {
           state = defaultState(); save(); ui.view = 'profile'; render();
-        }
+        });
         break;
     }
   });
+
+  /** In-page confirmation (native confirm() is blocked in some embedded viewers). */
+  function ask(message, yesLabel, onYes) {
+    var dlg = $('#modal');
+    dlg.innerHTML = '<p>' + esc(message) + '</p><div class="row" style="justify-content:flex-end">' +
+      '<button type="button" class="btn btn-ghost" data-action="close-modal">Cancel</button>' +
+      '<button type="button" class="btn" id="ask-yes">' + esc(yesLabel) + '</button></div>';
+    $('#ask-yes').onclick = function () { dlg.close(); onYes(); };
+    if (!dlg.open) dlg.showModal();
+  }
 
   document.addEventListener('input', function (e) {
     var t = e.target;
@@ -816,7 +834,27 @@
   });
 
   // ---------- Backup ----------
+  function backupText() { return JSON.stringify(state); }
+
   function exportData() {
+    var dlg = $('#modal');
+    dlg.innerHTML = '<div class="card-head"><h3>Backup</h3><button class="icon-btn" data-action="close-modal" aria-label="Close">×</button></div>' +
+      '<p><small>Copy this text and keep it somewhere safe (a note or an email to yourself). Paste it into “Restore backup” on any device.</small></p>' +
+      '<textarea id="backup-text" rows="6" readonly>' + esc(backupText()) + '</textarea>' +
+      '<div class="row" style="margin-top:10px"><button type="button" class="btn" data-action="copy-backup">Copy</button>' +
+      '<button type="button" class="btn btn-ghost" data-action="download-backup">Download file</button></div>';
+    dlg.showModal();
+  }
+
+  function copyBackup() {
+    var ta = $('#backup-text');
+    var fallback = function () { ta.focus(); ta.select(); toast('Selected — copy it with your keyboard or long-press'); };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(ta.value).then(function () { toast('Backup copied'); }, fallback);
+    } else fallback();
+  }
+
+  function downloadBackup() {
     var blob = new Blob([JSON.stringify(state, null, 2)], { type: 'application/json' });
     var a = document.createElement('a');
     a.href = URL.createObjectURL(blob);
@@ -825,17 +863,28 @@
     setTimeout(function () { URL.revokeObjectURL(a.href); }, 1000);
   }
 
+  function openRestore() {
+    var dlg = $('#modal');
+    dlg.innerHTML = '<div class="card-head"><h3>Restore backup</h3><button class="icon-btn" data-action="close-modal" aria-label="Close">×</button></div>' +
+      '<p><small>Paste your backup text, or choose a backup file. This replaces everything currently in the app.</small></p>' +
+      '<textarea id="restore-text" rows="6" placeholder="Paste backup here"></textarea>' +
+      '<label style="margin-top:10px">Or choose a file<input id="restore-file" type="file" accept="application/json,.json" data-action="import"></label>' +
+      '<button type="button" class="btn btn-block" data-action="restore-go">Replace my data with this backup</button>';
+    dlg.showModal();
+  }
+
+  function restoreFromText(text) {
+    try {
+      var data = JSON.parse(text);
+      if (!data || data.version !== 1) throw new Error('bad backup');
+      state = Object.assign(defaultState(), data);
+      save(); $('#modal').close(); ui.view = 'today'; render(); toast('Backup restored');
+    } catch (err) { toast('That isn’t a valid backup. Paste the full text you copied.'); }
+  }
+
   function importData(file) {
     var reader = new FileReader();
-    reader.onload = function () {
-      try {
-        var data = JSON.parse(reader.result);
-        if (!data || data.version !== 1) throw new Error('bad file');
-        if (!confirm('Replace all current data with this backup?')) return;
-        state = Object.assign(defaultState(), data);
-        save(); ui.view = 'today'; render(); toast('Backup restored');
-      } catch (err) { toast('That file isn’t a valid backup'); }
-    };
+    reader.onload = function () { $('#restore-text').value = reader.result; };
     reader.readAsText(file);
   }
 
