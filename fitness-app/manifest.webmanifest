@@ -1,0 +1,9 @@
+{
+  "name": "Bell & Fork",
+  "short_name": "Bell & Fork",
+  "description": "Calorie tracker and 12-week kettlebell + bodyweight training program.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f6f7f6",
+  "theme_color": "#0f766e"
+}
