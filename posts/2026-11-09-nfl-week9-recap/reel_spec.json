@@ -1,0 +1,9 @@
+{"c1":"#004C54","c2":"#0B2265","scenes":[
+{"type":"hook","kicker":"WEEK 9","lines":["THE EAGLES","ARE 2-7."],"accent":1,"dur":1.7},
+{"type":"stat","big":"7","label":"Giants sacks in a 19-11 win in Philly","team":{"abbr":"NYG","c1":"#0B2265","c2":"#A71930"},"dur":1.8},
+{"type":"list","title":"Week 9","rows":[
+ {"tag":{"abbr":"GB","c1":"#203731","c2":"#FFB612"},"text":"Packers 45, Pats 27","kicker":"+18"},
+ {"tag":{"abbr":"KC","c1":"#E31837","c2":"#FFB81C"},"text":"Chiefs 35, Jets 12","kicker":"+23"},
+ {"tag":{"abbr":"CHI","c1":"#0B162A","c2":"#C83803"},"text":"Bears 27, Bucs 24","kicker":"SNF"}],"dur":2.4},
+{"type":"question","lines":["ARE THE","EAGLES DONE?"],"options":["Done","Not yet"],"dur":2.4}
+]}
