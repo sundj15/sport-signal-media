@@ -198,6 +198,22 @@ details ul { margin: .4rem 0 0; padding-left: 1.2rem; font-size: .9rem; }
 .rest-bar strong { font-size: 1.2rem; font-variant-numeric: tabular-nums; }
 .rest-bar .btn-ghost { color: var(--bg); border-color: var(--bg); }
 
+/* Exercise demos */
+.demo-wrap { display: flex; flex-direction: column; gap: 6px; margin: .5rem 0 .4rem; }
+.demo { display: block; width: 100%; max-width: 340px; height: auto; aspect-ratio: 288 / 240; background: var(--surface-2); border-radius: 12px; }
+.demo-strip { display: flex; gap: 6px; overflow-x: auto; }
+.demo-strip .demo { width: 130px; flex: none; }
+.demo-near { stroke: var(--text); stroke-linecap: round; }
+.demo-far { stroke: var(--muted); stroke-linecap: round; opacity: .6; }
+.demo-head { fill: var(--text); }
+.demo-bell { fill: var(--accent); }
+.demo-bell-handle { stroke: var(--accent); stroke-linecap: round; }
+.demo-floor { stroke: var(--border); stroke-width: 2.5; }
+.demo-box { fill: var(--surface); stroke: var(--muted); stroke-width: 1.5; }
+.demo-caption { margin: 0; font-size: .8rem; color: var(--muted); }
+.demo-video { font-size: .9rem; font-weight: 600; color: var(--accent); text-decoration: none; }
+.demo-video:hover { text-decoration: underline; }
+
 /* Charts */
 .chart { width: 100%; height: auto; display: block; }
 .chart text { fill: var(--muted); font-size: 11px; }

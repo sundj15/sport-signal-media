@@ -110,4 +110,22 @@ test('every exercise has cues and easier/harder options', function () {
   });
 });
 
+console.log('Demos');
+var Demos = require('../js/demos.js');
+test('every exercise has an animated demo with valid joint positions', function () {
+  Object.keys(Program.EXERCISES).forEach(function (id) {
+    var anim = Demos.ANIM[id];
+    assert.ok(anim && anim.frames.length >= 1, 'missing demo for ' + id);
+    anim.frames.forEach(function (f, i) {
+      var j = Demos.solve(Demos.normalize(f));
+      Object.keys(j).forEach(function (k) {
+        if (Array.isArray(j[k]) && typeof j[k][0] === 'number') assert.ok(isFinite(j[k][0]) && isFinite(j[k][1]), id + ' frame ' + i + ' ' + k);
+      });
+    });
+  });
+});
+test('video links search YouTube for the exercise', function () {
+  assert.ok(/^https:\/\/www\.youtube\.com\/results\?search_query=Turkish/.test(Demos.videoUrl(Program.EXERCISES.tgu)));
+});
+
 console.log('\n' + passed + ' passed' + (process.exitCode ? ', some FAILED' : ''));

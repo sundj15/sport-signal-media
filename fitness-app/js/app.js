@@ -96,6 +96,7 @@
     var next = state.profile ? Program.nextSession(state.completed) : null;
     $('#topbar-sub').textContent = state.profile && next ? 'Week ' + next.week + ' of ' + Program.TOTAL_WEEKS : '';
     syncClock();
+    Demos.mountAll($('#main'));
   }
 
   function macroBar(cls, label, eaten, target) {
@@ -208,7 +209,7 @@
     var lib = Object.keys(Program.EXERCISES).map(function (id) {
       var ex = Program.EXERCISES[id];
       return '<details><summary>' + esc(ex.name) + ' <small>· ' + (ex.equip === 'kb' ? 'Kettlebell' : 'Bodyweight') + ' · ' + esc(ex.pattern) + '</small></summary>' +
-        exerciseDetail(ex) + '</details>';
+        exerciseDetail(ex, id) + '</details>';
     }).join('');
 
     return '<h2>12-week program</h2>' +
@@ -226,8 +227,8 @@
     return Program.getSession(Number(m[1]), Number(m[2]));
   }
 
-  function exerciseDetail(ex) {
-    return '<ul>' + ex.cues.map(function (c) { return '<li>' + esc(c) + '</li>'; }).join('') + '</ul>' +
+  function exerciseDetail(ex, id) {
+    return Demos.html(id, ex) + '<ul>' + ex.cues.map(function (c) { return '<li>' + esc(c) + '</li>'; }).join('') + '</ul>' +
       '<p style="margin:.4rem 0 .6rem;font-size:.85rem"><strong>Easier:</strong> ' + esc(ex.easier) + ' · <strong>Harder:</strong> ' + esc(ex.harder) + '</p>';
   }
 
@@ -291,7 +292,7 @@
       }).join('');
       return '<div class="exercise"><div class="card-head"><h3>' + esc(b.exercise.name) + '</h3><small>' + b.sets + ' × ' + esc(b.reps) + '</small></div>' +
         (b.note ? '<small>' + esc(b.note) + '</small>' : '') +
-        '<details><summary>How to do it</summary>' + exerciseDetail(b.exercise) + '</details>' +
+        '<details><summary>How to do it</summary>' + exerciseDetail(b.exercise, b.ex) + '</details>' +
         '<table class="set-table"><thead><tr><th>Set</th>' + (isKb ? '<th>' + wUnit() + '</th>' : '') +
         '<th>' + (timed ? 'Sec' : 'Reps') + (/side/.test(b.reps) ? '/side' : '') + '</th><th>Done</th></tr></thead><tbody>' + rows + '</tbody></table>' +
         '<small>Rest ' + b.rest + ' s between sets</small></div>';

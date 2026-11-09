@@ -23,7 +23,7 @@ Opening `index.html` directly also works. On a phone, host the folder anywhere s
 |---|---|
 | **Today** | Calories eaten vs. target, protein/carbs/fat bars, next workout, quick weigh-in |
 | **Food** | Log by meal (Breakfast/Lunch/Dinner/Snacks), browse past days, search ~75 foods, use servings or grams, add custom foods from a nutrition label |
-| **Train** | The 12-week grid, session previews, exercise library with coaching cues and easier/harder options, and the live workout logger (weight/reps per set, auto rest timer, survives page reloads) |
+| **Train** | The 12-week grid, session previews, exercise library with an animated demo, a video link, coaching cues and easier/harder options for every exercise, and the live workout logger (weight/reps per set, auto rest timer, survives page reloads) |
 | **Progress** | Weight trend chart with 7-entry average, 7-day calorie chart vs. target, sessions done, personal bests (estimated 1RM), week-12 test results, workout history, backup/restore |
 | **Profile** | Metric or imperial units, stats, activity, goal and rate, starting kettlebell size, plus your BMR, TDEE and targets |
 
@@ -53,6 +53,7 @@ css/styles.css        styles (light + dark)
 js/calc.js            BMR/TDEE/macros, nutrition, 1RM, unit conversion
 js/foods.js           food database (per 100 g)
 js/program.js         exercises + 12-week program
+js/demos.js           animated exercise demos (SVG figure + key poses) and video links
 js/app.js             UI, storage, logging
 test/run-tests.js     unit tests: node test/run-tests.js
 ```
