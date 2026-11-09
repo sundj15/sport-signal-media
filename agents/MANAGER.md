@@ -8,6 +8,7 @@ The manager is the scheduled run in the owner's Claude conversation. It owns the
 3. Metricool (brand 7531177): getScheduledPosts for the month — confirm nothing is already scheduled for today, count posts (max 19). Check the last post published; if one FAILED, tell the owner and fix it first.
 
 ## Post days (Mon/Tue/Thu/Fri)
+- First read the latest `research/week-*.md` — the Sunday look-ahead may override the day's slot (e.g. trade deadline Reel instead of fantasy). Total stays 4 posts/week.
 4. Spawn the **Scout** (Agent tool, general-purpose, foreground): "Follow agents/SCOUT.md in /home/claude/sport-signal-media for <date>, today's slot is <slot>."
 5. Spawn the **Creator** (foreground) with the slot, brief path, publish time and post count: "Follow agents/CREATOR.md…".
 6. **Review** before scheduling: open every slide (Read), re-check each number against fetch_sports_data, check the caption follows PLAYBOOK.md and has a hook, a question, a share line. Send it back to the Creator once if something is wrong.

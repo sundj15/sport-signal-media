@@ -15,6 +15,7 @@ This repo is public: it only holds post graphics and these tools. Nothing privat
 A huge moment (title clinched, record) can replace that day's topic. Never add extra posts.
 
 ## Rules
+- **Week numbers must be verified** from NFL.com/ESPN before using "Week N" anywhere (we mislabeled Oct 25 as Week 8 and Nov 1 as Week 9; they were Weeks 7 and 8). NFL Week 9 = Thu Nov 5 – Mon Nov 9, 2026.
 - No Canva or paid tools. No team logos, player photos or league marks — team abbreviations in team colors only.
 - Every score/stat/time/win chance comes from fetched data (sports data tool first; otherwise two reputable sources). If unsure, leave it out.
 - No betting advice, no fake giveaways, no "like for like".
