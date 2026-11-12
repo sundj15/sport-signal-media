@@ -1,0 +1,6 @@
+{"c1":"#0B2265","c2":"#5A1414","scenes":[
+{"type":"hook","kicker":"TNF TONIGHT","lines":["LAST TIME:","27-27."],"accent":1,"dur":1.7},
+{"type":"versus","top":"THURSDAY NIGHT","left":{"abbr":"WAS","name":"WASH.","c1":"#5A1414","c2":"#FFB612","sub":"45%"},"right":{"abbr":"NYG","name":"NEW YORK","c1":"#0B2265","c2":"#A71930","sub":"55%"},"bottom":"7:15 PM CT · win chance","dur":2.2},
+{"type":"stat","big":"7","label":"Giants sacks last week in Philly","team":{"abbr":"NYG","c1":"#0B2265","c2":"#A71930"},"dur":1.8},
+{"type":"question","lines":["WHO BREAKS","THE TIE?"],"options":["Giants","Commanders"],"dur":2.4}
+]}
