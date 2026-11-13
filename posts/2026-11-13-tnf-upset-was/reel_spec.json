@@ -1,0 +1,9 @@
+{"c1":"#5A1414","c2":"#0B2265","scenes":[
+{"type":"hook","kicker":"TNF UPSET","lines":["WASHINGTON HAD","A 45% CHANCE."],"accent":1,"dur":1.7},
+{"type":"stat","big":"1:05","label":"Left on the clock when Daniels hit Diggs for the 32-yard winner","team":{"abbr":"WAS","c1":"#5A1414","c2":"#FFB612"},"dur":2.0},
+{"type":"list","title":"How it ended","rows":[
+ {"tag":{"abbr":"WAS","c1":"#5A1414","c2":"#FFB612"},"text":"Daniels TD passes","kicker":"3"},
+ {"tag":{"abbr":"NYG","c1":"#0B2265","c2":"#A71930"},"text":"Giants turnovers","kicker":"2"},
+ {"tag":{"abbr":"FIN","c1":"#222","c2":"#FFB612"},"text":"WAS 24, NYG 21","kicker":"FINAL"}],"dur":2.4},
+{"type":"question","lines":["WHO RUNS","THE NFC EAST?"],"options":["Giants","Commanders","Cowboys"],"dur":2.4}
+]}
