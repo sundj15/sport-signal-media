@@ -59,6 +59,7 @@ Data: Reels reached 40–76 people each (photos reached 2), so Reels stay the ma
 - **Frame 1 = the hook**, already on screen: ≤ 8 words, contains a number or a surprise ("DALLAS HAD A 71.9% CHANCE."). Lines ≤ 14 characters so they stay huge.
 - **7–10 seconds total**, 3–5 scenes, a new beat every ~1.5–2s: hook → payoff stat (count-up) → context (list/versus) → question. The question scene should make people want to rewatch/answer.
 - One idea per Reel. Lead with the biggest audience: NFL > NBA > college football > others; star players and big-market teams in the hook (names only, no photos).
+- Proven (Nov 15): prefer surprise/upset hooks about a result that already happened ("X HAD A 45% CHANCE.") over previews.
 - Formats to rotate: **stat shock**, **who's better / versus**, **ranking (top 3)**, **pick'em**, **upset alert**.
 - Caption short: hook line, 2–4 lines, CAPS question, sign-off, 5 hashtags.
 - Song: from the rotation; if Metricool shows a trending sports track in search results, prefer it.
