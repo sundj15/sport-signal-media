@@ -1,0 +1,5 @@
+{"c1":"#4F2683","c2":"#203731","scenes":[
+{"type":"hook","kicker":"AT LAMBEAU","lines":["VIKINGS 30.","PACKERS 10."],"accent":1,"dur":2.0},
+{"type":"stat","big":"20","label":"Point win in Green Bay. Browns also stunned Houston, 27-24.","team":{"abbr":"MIN","c1":"#4F2683","c2":"#FFC62F"},"dur":1.8},
+{"type":"question","lines":["UPSET OF","THE WEEK?"],"options":["Vikings","Browns"],"dur":1.9}
+]}
