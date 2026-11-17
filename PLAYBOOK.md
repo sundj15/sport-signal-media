@@ -64,3 +64,9 @@ Data: Reels reached 40–76 people each (photos reached 2), so Reels stay the ma
 - Caption short: hook line, 2–4 lines, CAPS question, sign-off, 5 hashtags.
 - Song: from the rotation; if Metricool shows a trending sports track in search results, prefer it.
 - The Manager's Sunday review tracks per Reel: views, reach, **average watch time** (target > 4s), **retention %** (target > 40%), shares, follows — and keeps what works.
+
+## Creative upgrade (owner request, Nov 16)
+The owner wants posts/Reels more creative and with real images.
+- **Never** use images taken from other accounts' posts (copyright strikes can kill the page). Allowed: Creative Commons photos (Wikimedia, credit the photographer in the caption), royalty-free stock (Unsplash/Pexels), or photos the owner sends.
+- The image hosts are blocked from this workspace until the owner allows `upload.wikimedia.org`, `images.unsplash.com`, `images.pexels.com` in claude.ai Settings → Capabilities. Until then: no external photos.
+- Every post must look different from the last: vary layout (scoreboard/ticker, big-number, split versus), animate headlines word by word, stronger team-color treatment, textured/photo-style backgrounds built in code.
