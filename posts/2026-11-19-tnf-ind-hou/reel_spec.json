@@ -1,0 +1,5 @@
+{"c1":"#002C5F","c2":"#03202F","scenes":[
+{"type":"hook","kicker":"TNF TONIGHT","lines":["INDY HAS A","14.6% CHANCE."],"accent":1,"dur":2.0},
+{"type":"stat","big":"19-17","label":"Colts beat Houston in September. Rematch in Houston, 7:15 PM CT.","team":{"abbr":"IND","c1":"#002C5F","c2":"#A2AAAD"},"dur":1.8},
+{"type":"question","lines":["UPSET OR","BLOWOUT?"],"options":["Colts upset","Texans roll"],"dur":1.9}
+]}
